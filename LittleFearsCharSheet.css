@@ -1,0 +1,109 @@
+
+
+/*** Roll20 Character Sheet Tags - Uncomment Section for install on Roll20 *** 
+
+.sheet-tab-content {
+  display: none;
+}
+
+input.sheet-tab-char:checked ~ div.sheet-tab-char,
+input.sheet-tab-npc:checked ~ div.sheet-tab-npc,
+input.sheet-tab-question:checked ~ div.sheet-tab-question,
+{
+  display: block;
+}
+
+input.sheet-tab
+{
+  width: 100px;
+  height: 20px;
+  position: relative;
+  margin-bottom: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+input.sheet-tab::before
+{
+  content: attr(title);
+
+  border: solid 1px #a7a7a7;
+  border-bottom-color: #ffffff;
+  text-align: center;
+  display: inline-block;
+
+  background: #bbbbbb;
+
+  width: 100px;
+  height: 20px;
+  font-size: 18px;
+}
+
+input.sheet-tab:checked::before
+{
+  background: #ffffff;
+}
+
+
+/*** Roll Template Definitions **  - Uncomment section for install on Roll20 ***
+
+.sheet-rolltemplate-LittleFears table {
+    width: 189px;
+    height: 189px;
+    padding: 2px;
+    background: url("https://s3.amazonaws.com/files.d20.io/images/19776729/zZ_xlhyCy0GuBOBU4uZRBw/med.jpg") top left;
+    background-size: 189px 189px;
+    background-repeat: no-repeat;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    border-spacing: 0;
+}
+
+.sheet-rolltemplate-LittleFears th {
+	background-color: red;
+	color: #ffffff;
+	padding: 2px;
+	border-bottom: 1px solid black;
+	line-height: 1.6em;
+	font-size: 1.2em;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.sheet-rolltemplate-LittleFears .userscript-tcat {
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-LittleFears td {
+	padding: 5px;
+	border-bottom: 10px solid black;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.sheet-rolltemplate-LittleFears tr:nth-child(odd) {
+	background-color: rgba(217, 217, 214,1);
+}
+
+.sheet-rolltemplate-LittleFears tr:nth-child(even) {
+	background-color: rgba(233, 233, 233,1);
+}
+
+.sheet-rolltemplate-LittleFears .inlinerollresult  {
+	display: inline-block;
+	min-width: 1.5em;
+	text-align: center;
+	border: 2px solid rgba(167, 168, 170,1);
+}
+
+.sheet-rolltemplate-LittleFears .inlinerollresult.fullcrit {
+	border: 2px solid #3FB315;
+}
+
+.sheet-rolltemplate-LittleFears .inlinerollresult.fullfail {
+	border: 2px solid #B31515;
+}
+
+.sheet-rolltemplate-LittleFears .inlinerollresult.importantroll {
+	border: 2px solid #4A57ED;
+}
+
+/***/

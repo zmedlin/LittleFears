@@ -1,0 +1,1100 @@
+<link href="LittleFearsCharSheet.css" rel="stylesheet" type="text/css" />
+
+<input type="radio" name="sheet-tab" class="sheet-tab sheet-tab-char" title="Character" value="1" checked="checked" id="sheetTabGroup1"/>
+<input type="radio" name="sheet-tab" class="sheet-tab sheet-tab-question" title="Questionnaire" value="2" id="sheetTabGroup2"/>
+<input type="radio" name="sheet-tab" class="sheet-tab sheet-tab-npc" title="NPCs" value="3" id="sheetTabGroup3"/>
+    
+<!-- Defines the Character Tab display box -->
+<div class="sheet-tab-content sheet-tab-char">
+
+<!-- Contains the Header Logo and "This Is Me" section -->
+    <table name="headerTable" width="100%" height="100%" border="3" cellpadding="15" cellspacing="15" bordercolor="#999999">
+        <tr>
+            <td width="551" height="360" rowspan="2"><p><img src="https://s3.amazonaws.com/files.d20.io/images/19769491/pJK6lyCw25jwLsAbitBhZQ/max.jpg" width="551" height="323" longdesc=    "https://s3.amazonaws.com/files.d20.io/images/19769491/pJK6lyCw25jwLsAbitBhZQ/max.jpg" /></p></td>
+            <td align="top"><h1 align="right" class="style3">CHARACTER SHEET</h1>
+                <hr></td>
+        </tr>
+        <tr>
+          <td align="left"><h2 class="courier style4">This is Me!</h2> 
+          <table width="509" height="151" name="ThisIsMe">
+            <tr>
+              <td width="104" align="center">My name is</td>
+              <td width="197"><input type="text" name="attr_name" id="name" /></td>
+              <td width="192"></td>
+            </tr>
+            <tr>
+              <td align="center">I am</td>
+              <td><input type="text" name="attr_age" id="age" /></td>
+              <td class="Typewriter">years old</td>
+            </tr>
+            <tr>
+              <td align="center">My birthday is</td>
+              <td><input type="text" name="attr_dob" id="dob" /></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table></td>
+        </tr>
+    </table>
+
+	<table name="charTable" width="100%" height="100%" border="3" cellpadding="15" cellspacing="15" bordercolor="#999999">
+    	<tr>
+        	<!-- Laysout righthand column of the Character Stats & Abilities tab -->
+ 			<td width="551" height="360"><h1 class="style3"><u>Abilities</u></h1>
+                <table name="abilities" nwidth="287">
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td><div align="center" class="style2"><em>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</em></div></td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="55">Move</td>
+                        <td width="166">
+                            <div align="center">
+                              <input type="radio" name="attr_move" value="1" id="moveGroup0" />
+                              <input type="radio" name="attr_move" value="2" id="moveGroup1" />
+                              <input type="radio" name="attr_move" value="3" id="moveGroup2" />
+                              <input type="radio" name="attr_move" value="4" id="moveGroup3" />
+                              <input type="radio" name="attr_move" value="5" id="moveGroup4" />
+                              <input type="radio" name="attr_move" value="6" id="moveGroup5" />                        
+                            </div></td>                   
+                        <td width="50">
+                            <!--<button type="roll" name="rollMove" id="rollMove" value='&{template:default} {{name=@{selected|name} Rolls Move!}}{{result=[[{(@{selected|move}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>-->
+                            <button type="roll" name="rollMove" id="rollMove" value='&{template:LittleFears} {{name=@{selected|name} Rolls Move!}}{{result=[[{(@{selected|move}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="55">Fight</td>
+                        <td width="166">
+                            <div align="center">
+                              <input type="radio" name="attr_fight" value="1" id="fightGroup0" />
+                              <input type="radio" name="attr_fight" value="2" id="fightGroup1" />
+                              <input type="radio" name="attr_fight" value="3" id="fightGroup2" />
+                              <input type="radio" name="attr_fight" value="4" id="fightGroup3" />
+                              <input type="radio" name="attr_fight" value="5" id="fightGroup4" />
+                              <input type="radio" name="attr_fight" value="6" id="fightGroup5" />                        
+                            </div></td>
+                        <td width="50">
+                            <button type="roll" name="rollFight" id="rollFight" value='&{template:default} {{name=@{selected|name} Rolls Fight!}}{{result=[[{(@{selected|fight}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="55">Think</td>
+                         <td width="166">
+                            <div align="center">
+                              <input type="radio" name="attr_think" value="1" id="thinkGroup0" />
+                              <input type="radio" name="attr_think" value="2" id="thinkGroup1" />
+                              <input type="radio" name="attr_think" value="3" id="thinkGroup2" />
+                              <input type="radio" name="attr_think" value="4" id="thinkGroup3" />
+                              <input type="radio" name="attr_think" value="5" id="thinkGroup4" />
+                              <input type="radio" name="attr_think" value="6" id="thinkGroup5" />                        
+                            </div></td>
+                        <td width="50">
+                            <button type="roll" name="rollThink"id="rollThink" value='&{template:default} {{name=@{selected|name} Rolls Think!}}{{result=[[{(@{selected|think}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td width="55">Speak</td>
+                        <td width="166">
+                            <div align="center">
+                              <input type="radio" name="attr_speak" value="1" id="speakGroup0" />
+                              <input type="radio" name="attr_speak" value="2" id="speakGroup1" />
+                              <input type="radio" name="attr_speak" value="3" id="speakGroup2" />
+                              <input type="radio" name="attr_speak" value="4" id="speakGroup3" />
+                              <input type="radio" name="attr_speak" value="5" id="speakGroup4" />
+                              <input type="radio" name="attr_speak" value="6" id="speakGroup5" />                        
+                            </div></td>
+                        <td width="50">
+                            <button type="roll" name="rollSpeak" id="rollSpeak" value='&{template:default} {{name=@{selected|name} Rolls Speak!}}{{result=[[{(@{selected|speak}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>                        </td>
+                    </tr>
+                    <tr>
+                        <td width="55">Care</td>
+                        <td width="166">
+                            <div align="center">
+                              <input type="radio" name="attr_care" value="1" id="careGroup0" />
+                              <input type="radio" name="attr_care" value="2" id="careGroup1" />
+                              <input type="radio" name="attr_care" value="3" id="careGroup2" />
+                              <input type="radio" name="attr_care" value="4" id="careGroup3" />
+                              <input type="radio" name="attr_care" value="5" id="careGroup4" />
+                              <input type="radio" name="attr_care" value="6" id="careGroup5" />                        
+                            </div></td>
+                        <td width="50">
+                            <button type="roll" name="rollCare" id="rollCare" value='&{template:default} {{name=@{selected|name} Rolls Care!}}{{result=[[{(@{selected|care}+?{Using Quality|none,0|+3,3|+2,2|+1,1|-1,-1|-2,-2}?{Do you believe in yourself or yourStuff?|No,+0|+1|+2|+3}+?{Do others Believe?|0})?{Im|Not Using a Trait,d6!!|Good at This,d6dl1!!+1d6!!|Bad at This,d6dh1!!}}k3?{I feel|fine,-0|sore,-2|hurt,-4|cold,-6}]]}}'></button>                        </td>
+                    </tr>
+                </table>
+            
+				<hr>
+                
+                <!-- Define Traits -->
+ 				<h1 class="style3">Traits</h1>
+            	<!-- traits table -->
+<table name="traits" width="325">
+                    <tr>
+                        <td width="24">
+                            <span class="style4"><strong>
+                                <input type="checkbox" name="attr_useGoodTrait" id="useGoodTrait" />
+                            </strong></span>
+                        </td>
+                        <td width="91"><span class="style4"><strong>GOOD</strong>: </span>I can </td>
+                        <td width="70">
+                          <select name="attr_goodAbility" id="goodAbility">
+                            <option value="attrmove">move</option>
+                            <option value="fight">fight</option>
+                            <option value="think">think</option>
+                            <option value="speak">speak</option>
+                            <option value="care">care</option>
+                            </select>
+                      </td>
+                        <td width="120">well when</td>
+          </tr>
+                    
+                    <tr>
+                        <td height="52" colspan="4">
+                            <span class="style4">
+                            <input name="attr_goodCondition" type="text" id="goodCondition" value="" size="30">
+                            </span>
+                        </td>
+                    </tr>
+              </table>
+
+			<p>&nbsp;</p>
+            
+			<!-- Define and use traits -->
+<table name="useTraits" width="326">
+				<tr>
+                    <td width="32">
+                    	<span class="style4"><strong>
+                        	<input type="checkbox" name="attr_useBadTrait" id="useBadTrait" />
+                      </strong></span>
+                  </td>
+                    <td width="171"><span class="style4"><strong>BAD</strong>: </span>It's hard for me to </td>
+                  <td width="68"><select name="attr_badAbility" id="badAbility">
+        	            <option value="move">move</option>
+                        <option value="fight">fight</option>
+                        <option value="think">think</option>
+                        <option value="speak">speak</option>
+                        <option value="care">care</option></select>
+                  </td>
+                    <td width="35">when</td>
+          </tr>
+                
+                <tr>
+					<td height="35" colspan="4">
+                    	<span class="style4">
+						<input name="attr_badCondition" type="text" id="badCondition" value="" size="30">
+						</span>
+					</td>
+			  </tr>
+ 			</table>
+ 
+ 			<hr>
+            <!-- Lays out the Qualities table -->
+ 			<h1 class="style3">Qualities</h1>
+            
+			<table name="qualities" width="325">
+                <tr>
+                    <td width="36">I am</td>
+                    <td width="212"><span class="style4">
+                        <input type="text" name="attr_quality1" id="quality1" /></span></td>
+                    <td width="61"> +2</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                    <td><span class="style4">
+                        <input type="text" name="attr_quality2" id="quality2" /></span></td>
+                    <td> +3</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><span class="style4">
+                        <input type="text" name="attr_quality3" id="quality3" />
+                        </span>
+                    </td>
+                    <td> +3</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <span class="style4">
+                        <input type="text" name="attr_quality4" id="quality4" />
+                    </span>
+                    </td>
+                    <td>
+                        <span class="style4">
+                            <select style="width: 48px" name="qualityMod" id="qualityMod">
+                            <option value="1">+1</option>
+                            <option value="2">+2</option>
+                            <option value="-1">-1</option>
+                            <option value="-2">-2</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <span class="style4">
+                            <input type="text" name="attr_quality5" id="quality5" />
+                        </span></td>
+                    <td><span class="style4">
+                            <select style="width: 48px" name="qualityMod2" id="qualityMod2">
+                            <option value="1">+1</option>
+                            <option value="2">+2</option>
+                            <option value="-1">-1</option>
+                            <option value="-2">-2</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <span class="style4">
+                            <input type="text" name="attr_quality6" id="quality6" />
+                        </span>
+                    </td>
+                    <td>
+                        <span class="style4">
+                            <select style="width: 48px"name="qualityMod3" id="qualityMod3">
+                            <option value="1">+1</option>
+                            <option value="2">+2</option>
+                            <option value="-1" selected="selected">-1</option>
+                            <option value="-2">-2</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><span class="style4">
+                         <input type="text" name="attr_quality7" id="quality7" />
+                        </span>
+                    </td>
+                    <td>
+                        <span class="style4">
+                            <select style="width: 48px" name="qualityMod4" id="qualityMod4">
+                            <option value="1">+1</option>
+                            <option value="2">+2</option>
+                            <option value="-1" selected="selected">-1</option>
+                            <option value="-2">-2</option>
+                            </select>
+                        </span>
+                    </td>
+                </tr>
+			</table>
+ 
+ 			<hr>
+            
+            <!-- define goals -->
+			<table name="goals" width="465">
+                <tr>
+                    <td width="304" height="41"><h1><span class="style3">Goals</span></h1></td>
+                    <td width="72">Short Term</td>
+                    <td width="73">Long Term</td>
+                </tr>
+                <tr>
+                    <td height="37"><textarea name="goal_1" cols="35" rows="3" id="goal_1"></textarea></td>
+                  <td><input type="radio" name="goal1_term" id="goal1_term_group" value="0"></td>
+                    <td><input type="radio" name="goal1_term" id="goal1_term_group" value="1"></td>
+                </tr>
+                <tr>
+                    <td height="42"><input name="goal_2" type="text" id="goal_2" value="" size="35" maxlength="3"></td>
+                    <td><input type="radio" name="goal2_term" id="goal2_term_group" value="0"></td>
+                    <td><input type="radio" name="goal2_term" id="goal2_term_group" value="1"></td>
+                </tr>
+             </table> 
+             
+             <hr>
+             
+             <!-- Lays out all the Virtues -->
+             <h1 class="style3">Virtues</h1>
+             <!-- lay out the belief points -->
+<table name="belief points" width="349" height="79">
+    <tr>
+                  <td>&nbsp;</td>
+                  <td align="center"><div align="center"><span class="style2"><em>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</em></span></div></td>
+          </tr>
+                <tr>
+                    <td width="54"><div align="right">Belief: </div></td>
+                  <td align="center" width="283">
+<div align="center">
+                    	  <input type="radio" name="attr_belief" value="1" id="beliefGroup_0" />
+                    	  <input type="radio" name="attr_belief" value="2" id="beliefGroup_1" />
+                    	  <input type="radio" name="attr_belief" value="3" id="beliefGroup_2" />
+                    	  <input type="radio" name="attr_belief" value="4" id="beliefGroup_3" />
+                    	  <input type="radio" name="attr_belief" value="5" id="beliefGroup_4" />
+                    	  <input type="radio" name="attr_belief" value="6" id="beliefGroup_5" />
+                    	  <input type="radio" name="attr_belief" value="7" id="beliefGroup_6" />
+                    	  <input type="radio" name="attr_belief" value="8" id="beliefGroup_7" />
+                    	  <input type="radio" name="attr_belief" value="9" id="beliefGroup_8" />
+                    	  <input type="radio" name="attr_belief" value="10" id="beliefGroup_9" />                    
+           	      </div></td>
+          </tr>
+            </table>
+            
+ 			<p>&nbsp;</p>
+ 
+ 			<!-- Layout Wits points -->
+ 			<table name="wits" width="387" height="104">
+<tr>
+                    <td width="54">Wits<span class="style4">: </span></td>
+            <td width="283"><div align="center"><span class="style2"><em>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10</em></span></div></td>
+              <td width="34">&nbsp;</td>
+              </tr>
+                <tr>
+                    <td><div align="right">scared</div></td>
+            <td align="center" >
+                   	  <div align="center">
+                    	  <input type="radio" name="attr_wits" value="1" id="witsGroup_10" />
+                    	  <input type="radio" name="attr_wits" value="2" id="witsGroup_11" />
+                    	  <input type="radio" name="attr_wits" value="3" id="witsGroup_12" />
+                    	  <input type="radio" name="attr_wits" value="4" id="witsGroup_13" />
+                    	  <input type="radio" name="attr_wits" value="5" id="witsGroup_14" />
+                    	  <strong>|</strong> 
+                    	  <!-- Not a mistake, insers the half way mark -->
+                    	  <input type="radio" name="attr_wits" value="6" id="witsGroup_15" />
+                    	  <input type="radio" name="attr_wits" value="7" id="witsGroup_16" />
+                    	  <input type="radio" name="attr_wits" value="8" id="witsGroup_17" />
+                    	  <input type="radio" name="attr_wits" value="9" id="witsGroup_18" />
+                    	  <input type="radio" name="attr_wits" value="10" id="witsGroup_19" />
+   	          </div></td>
+                    <td> calm </td>
+              </tr>
+            </table>
+            
+ 			<p>&nbsp;</p>
+            
+            <!-- Laysout spirit points -->           
+<table width="396" height="87">
+  <tr>
+                    <td width="54">Spirit<span class="style4">: </span></td>
+                  <td width="283"><div align="center"><span class="style2"><em>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10</em></span></div></td>
+                  <td width="43">&nbsp;</td>
+          </tr>
+                <tr>
+                    <td><div align="right">dark</div></td>
+                  <td align="center">
+                    <div align="center">
+                          <input type="radio" name="attr_spirit" value="1" id="spiritGroup_1" />
+                          <input type="radio" name="attr_spirit" value="2" id="spiritGroup_2" />
+                          <input type="radio" name="attr_spirit" value="3" id="spiritGroup_3" />
+                          <input type="radio" name="attr_spirit" value="4" id="spiritGroup_4" />
+                          <input type="radio" name="attr_spirit" value="5" id="spiritGroup_5" />
+                          <strong>|</strong> 
+                          <!-- half way point -->
+                          <input type="radio" name="attr_spirit" value="6" id="spiritGroup_6" />
+                          <input type="radio" name="attr_spirit" value="7" id="spiritGroup_7" />
+                          <input type="radio" name="attr_spirit" value="8" id="spiritGroup_8" />
+                          <input type="radio" name="attr_spirit" value="9" id="spiritGroup_9" />
+                          <input type="radio" name="attr_spirit" value="10" id="spiritGroup_10" />
+                    </div></td>
+                <td> whole </td>
+                </tr>
+            </table> 
+            
+			<p class="style1">&nbsp;</p>
+        </td> 
+        <!-- Laysout righthand column of the Character Stats & Abilities tab -->
+		<td width="790">
+        	<h1 class="style3">I Feel</h1>
+        
+            <table name="Hit Point" width="377">
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><div align="center" class="style2"><em>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</em></div></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="46">fine</td>
+                    <td width="280">
+                        <div align="center">
+                          <input type="radio" name="attr_fine" value="1" id="fineGroup_0" />
+                          <input type="radio" name="attr_fine" value="2" id="fineGroup_1" />
+                          <input type="radio" name="attr_fine" value="3" id="fineGroup_2" />
+                          <input type="radio" name="attr_fine" value="4" id="fineGroup_3" />
+                          <input type="radio" name="attr_fine" value="5" id="fineGroup_4" />
+                          <input type="radio" name="attr_fine" value="6" id="fineGroup_5" />
+                          <input type="radio" name="attr_fine" value="7" id="fineGroup_6" />
+                          <input type="radio" name="attr_fine" value="8" id="fineGroup_7" />
+                          <input type="radio" name="attr_fine" value="9" id="fineGroup_8" />
+                          <input type="radio" name="attr_fine" value="10" id="fineGroup_9" />                    
+                        </div></td>
+                    <td width="35">&nbsp;</td>
+                </tr>
+                <tr>
+                	<td>sore</td> 	
+                 	<td width="280">
+                    	<div align="center">
+                    	  <input type="radio" name="attr_sore" value="1"id="soreGroup_0" />
+                    	  <input type="radio" name="attr_sore" value="2"id="soreGroup_1" />
+                    	  <input type="radio" name="attr_sore" value="3"id="soreGroup_2" />
+                    	  <input type="radio" name="attr_sore" value="4"id="soreGroup_3" />
+                    	  <input type="radio" name="attr_sore" value="5"id="soreGroup_4" />
+                    	  <input type="radio" name="attr_sore" value="6"id="soreGroup_5" />
+                    	  <input type="radio" name="attr_sore" value="7"id="soreGroup_6" />
+                    	  <input type="radio" name="attr_sore" value="8"id="soreGroup_7" />
+                    	  <input type="radio" name="attr_sore" value="9"id="soreGroup_8" />
+                    	  <input type="radio" name="attr_sore" value="10" id="soreGroup_9" />                  
+                  	  </div></td>
+                		<td>(-2)</td>
+              </tr>
+                    <tr>
+                    	<td>bad</td> 	
+                     	<td width="280">
+                       		<div align="center">
+                       		  <input type="radio" name="attr_bad" value="1"id="badGroup_0" />
+                       		  <input type="radio" name="attr_bad" value="2"id="badGroup_1" />
+                       		  <input type="radio" name="attr_bad" value="3"id="badGroup_2" />
+                       		  <input type="radio" name="attr_bad" value="4"id="badGroup_3" />
+                       		  <input type="radio" name="attr_bad" value="5"id="badGroup_4" />
+                       		  <input type="radio" name="attr_bad" value="6"id="badGroup_5" />
+                       		  <input type="radio" name="attr_bad" value="7"id="badGroup_6" />
+                       		  <input type="radio" name="attr_bad" value="8"id="badGroup_7" />
+                       		  <input type="radio" name="attr_bad" value="9"id="badGroup_8" />
+                       		  <input type="radio" name="attr_bad" value="10" id="badGroup_9" />                       	
+                   		  </div></td>
+                     	<td>(-4)</td>
+                    </tr>
+                    <tr>
+                    	<td>cold</td> 	
+                        <td width="280">
+                            <div align="center">
+                              <input type="radio" name="attr_cold" value="1"id="coldGroup_0" />
+                              <input type="radio" name="attr_cold" value="2"id="coldGroup_1" />
+                              <input type="radio" name="attr_cold" value="3"id="coldGroup_2" />
+                              <input type="radio" name="attr_cold" value="4"id="coldGroup_3" />
+                              <input type="radio" name="attr_cold" value="5"id="coldGroup_4" />
+                              <input type="radio" name="attr_cold" value="6"id="coldGroup_5" />
+                              <input type="radio" name="attr_cold" value="7"id="coldGroup_6" />
+                              <input type="radio" name="attr_cold" value="8"id="coldGroup_7" />
+                              <input type="radio" name="attr_cold" value="9"id="coldGroup_8" />
+                              <input type="radio" name="attr_cold" value="10" id="coldGroup_9" />                        
+                            </div></td>
+                 		<td>(-6)</td>
+					</tr>
+		  </table>
+                
+                <hr>
+                <h2 class="style3">Stuff</h2>
+                <!-- Define You Stuff -->
+                <table name="stuff1" width="474" height="121">
+                    <tr>
+                        <td width="74" height="37"><div align="left">Stuff 1:</div></td>
+                        <td width="298"><textarea name="attr_stuff1" cols="35" rows="1" id="attr_stuff1"></textarea></td>
+                        <td width="86"><p align="center">Belief:
+                          <input name="attr_stuff1_totalBelief" type="text" id="attr_stuff1_totalBelief" size="5" maxlength="5" readonly>
+                      <p align="center" class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em></p></td>
+                    </tr>
+                    <tr>
+                        <td><div align="right">* power:</div></td>
+                        <td><textarea name="attr_stuff1_power1" cols="35" rows="2" id="attr_stuff1_power1"></textarea></td>
+                        <td>
+                            <div align="center">
+                              <input type="radio" name="attr_stuff1_power1_belief" value="1" id="attr_stuff1_power1_belief_0">
+                              <input type="radio" name="attr_stuff1_power1_belief" value="2" id="attr_stuff1_power1_belief_1">
+                              <input type="radio" name="attr_stuff1_power1_belief" value="3" id="attr_stuff1_power1_belief_2">
+                            </div></td>
+                    </tr>
+                    <tr>
+                        <td><div align="right">* power:</div></td>
+                        <td><textarea name="attr_stuff1_power2" cols="35" rows="2" id="attr_stuff1_power2"></textarea></td>
+                        <td>
+                            <div align="center">
+                              <input type="radio" name="attr_stuff1_power2_belief" value="1" id="attr_stuff1_power2_belief_0">
+                              <input type="radio" name="attr_stuff1_power2_belief" value="2" id="attr_stuff1_power2_belief_1">
+                              <input type="radio" name="attr_stuff1_power2_belief" value="3" id="attr_stuff1_power2_belief_2">
+                            </div></td>
+                    </tr>
+                    <tr>
+                        <td height="24"><div align="right">* power:</div></td>
+                        <td><textarea name="attr_stuff1_power3" cols="35" rows="2" id="attr_stuff1_power3"></textarea></td>
+                        <td>
+                            <div align="center">
+                              <input type="radio" name="attr_stuff1_power3_belief" value="1" id="attr_stuff1_power3_belief_0">
+                              <input type="radio" name="attr_stuff1_power3_belief" value="2" id="attr_stuff1_power3_belief_1">
+                              <input type="radio" name="attr_stuff1_power3_belief" value="3" id="attr_stuff1_power3_belief_2">
+                            </div></td>
+                    </tr>
+          </table>
+                    
+                    <p>&nbsp;</p>
+                    <table name="stuff2" width="474" height="119">
+                        <tr>
+                            <td width="74" height="37"><div align="left">Stuff 2:</div></td>
+                            <td width="298"><textarea name="attr_stuff2" cols="35" rows="1" id="attr_stuff2"></textarea></td>
+                            <td width="86"><div align="center">
+                              <p>
+                                Belief:
+                          <input name="attr_stuff2_totalBelief" type="text" id="attr_stuff2_totalBelief" size="5" maxlength="5" readonly>
+                              </p>
+                              <p class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em> </p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff2_power1" cols="35" rows="2" id="attr_stuff2_power1"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff2_power1_belief" value="1" id="attr_stuff2_power1_belief_0">
+                                  <input type="radio" name="attr_stuff2_power1_belief" value="2" id="attr_stuff2_power1_belief_1">
+                                  <input type="radio" name="attr_stuff2_power1_belief" value="3" id="attr_stuff2_power1_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff2_power2" cols="35" rows="2" id="attr_stuff2_power2"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff2_power2_belief" value="1" id="attr_stuff2_power2_belief_0">
+                                  <input type="radio" name="attr_stuff2_power2_belief" value="2" id="attr_stuff2_power2_belief_1">
+                                  <input type="radio" name="attr_stuff2_power2_belief" value="3" id="attr_stuff2_power2_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td height="24"><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff2_power3" cols="35" rows="2" id="attr_stuff2_power3"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff2_power3_belief" value="1" id="attr_stuff2_power3_belief_0">
+                                  <input type="radio" name="attr_stuff2_power3_belief" value="2" id="attr_stuff2_power3_belief_1">
+                                  <input type="radio" name="attr_stuff2_power3_belief" value="3" id="attr_stuff2_power3_belief_2">
+                                </div></td>
+                        </tr>
+                    </table>
+                    
+                    <p class="style1">&nbsp;</p>
+                    <table name="stuff3" width="474" height="119">
+                        <tr>
+                            <td width="74" height="37"><div align="left">Stuff 3:</div></td>
+                            <td width="298"><textarea name="attr_stuff3" cols="35" rows="1" id="attr_stuff3"></textarea></td>
+                            <td width="86"><div align="center">
+                              <p>
+                              Belief:
+                                <input name="attr_stuff3_totalBelief" type="text" id="attr_stuff3_totalBelief" size="5" maxlength="5" readonly>
+                              </p>
+                              <p class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em> </p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff3_power1" cols="35" rows="2" id="attr_stuff3_power1"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff3_power1_belief" value="1" id="attr_stuff3_power1_belief_0">
+                                  <input type="radio" name="attr_stuff3_power1_belief" value="2" id="attr_stuff3_power1_belief_1">
+                                  <input type="radio" name="attr_stuff3_power1_belief" value="3" id="attr_stuff3_power1_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff3_power2" cols="35" rows="2" id="attr_stuff3_power2"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff3_power2_belief" value="1" id="attr_stuff3_power2_belief_0">
+                                  <input type="radio" name="attr_stuff3_power2_belief" value="2" id="attr_stuff3_power2_belief_1">
+                                  <input type="radio" name="attr_stuff3_power2_belief" value="3" id="attr_stuff3_power2_belief_2">
+                              </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff3_power3" cols="35" rows="2" id="attr_stuff3_power3"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff3_power3_belief" value="1" id="attr_stuff3_power3_belief_0">
+                                  <input type="radio" name="attr_stuff3_power3_belief" value="2" id="attr_stuff3_power3_belief_1">
+                                  <input type="radio" name="attr_stuff3_power3_belief" value="3" id="attr_stuff3_power3_belief_2">
+                                </div></td>
+                        </tr>
+          </table>
+                     
+                    <p>&nbsp;</p>
+                    <table name="stuff4" width="474" height="195">
+                        <tr>
+                            <td width="74" height="37"><div align="left">Stuff 4:</div></td>
+                            <td width="298"><textarea name="attr_stuff4" cols="35" rows="1" id="attr_stuff4"></textarea></td>
+                            <td width="86"><div align="center">
+                              Belief:
+                          <input name="attr_stuff4_totalBelief" type="text" id="attr_stuff4_totalBelief" size="5" maxlength="5" readonly>
+                              <p class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em> </p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff4_power1" cols="35" rows="2" id="attr_stuff4_power1"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff4_power1_belief" value="1" id="attr_stuff4_power1_belief_0">
+                                  <input type="radio" name="attr_stuff4_power1_belief" value="2" id="attr_stuff4_power1_belief_1">
+                                  <input type="radio" name="attr_stuff4_power1_belief" value="3" id="attr_stuff4_power1_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff4_power2" cols="35" rows="2" id="attr_stuff4_power2"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff4_power2_belief" value="1" id="attr_stuff4_power2_belief_0">
+                                  <input type="radio" name="attr_stuff4_power2_belief" value="2" id="attr_stuff4_power2_belief_1">
+                                  <input type="radio" name="attr_stuff4_power2_belief" value="3" id="attr_stuff4_power2_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td height="37"><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff4_power3" cols="35" rows="2" id="attr_stuff4_power3"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff4_power3_belief" value="1" id="attr_stuff4_power3_belief_0">
+                                  <input type="radio" name="attr_stuff4_power3_belief" value="2" id="attr_stuff4_power3_belief_1">
+                                  <input type="radio" name="attr_stuff4_power3_belief" value="3" id="attr_stuff4_power3_belief_2">
+                                </div></td>
+                        </tr>
+                    </table>
+                    
+                    <p>&nbsp;</p>
+                    
+                    <table name="stuff5" width="474" height="177">
+                        <tr>
+                            <td width="74" height="37"><div align="left">Stuff 5:</div></td>
+                            <td width="298"><textarea name="attr_stuff5" cols="35" rows="1" id="attr_stuff5"></textarea></td>
+                            <td width="86"><div align="center">
+                              Belief:      
+                              <input name="attr_stuff5_totalBelief" type="text" id="attr_stuff5_totalBelief" size="5" maxlength="5" readonly>
+                              <p class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em> </p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff5_power1" cols="35" rows="2" id="attr_stuff5_power1"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff5_power1_belief" value="1" id="attr_stuff5_power1_belief_0">
+                                  <input type="radio" name="attr_stuff5_power1_belief" value="2" id="attr_stuff5_power1_belief_1">
+                                  <input type="radio" name="attr_stuff5_power1_belief" value="3" id="attr_stuff5_power1_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff5_power2" cols="35" rows="2" id="attr_stuff5_power2"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff5_power2_belief" value="1" id="attr_stuff5_power2_belief_0">
+                                  <input type="radio" name="attr_stuff5_power2_belief" value="2" id="attr_stuff5_power2_belief_1">
+                                  <input type="radio" name="attr_stuff5_power2_belief" value="3" id="attr_stuff5_power2_belief_2">
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <td height="24"><div align="right">* power:</div></td>
+                            <td><textarea name="attr_stuff5_power3" cols="35" rows="2" id="attr_stuff5_power3"></textarea></td>
+                            <td>
+                                <div align="center">
+                                  <input type="radio" name="attr_stuff5_power3_belief" value="1" id="attr_stuff5_power3_belief_0">
+                                  <input type="radio" name="attr_stuff5_power3_belief" value="2" id="attr_stuff5_power3_belief_1">
+                                  <input type="radio" name="attr_stuff5_power3_belief" value="3" id="attr_stuff5_power3_belief_2">
+                                </div></td>
+                        </tr>
+                    </table>
+                    
+					<hr>
+                    <h2 class="style4">Playaround Points:</h2>
+                    <span class="style2">1</span>
+          <input type="radio" name="attr_playaroundGroup" value="1"id="playaroundGroup_10" />
+                    <input type="radio" name="attr_playaroundGroup" value="2"id="playaroundGroup_11" />
+                    <input type="radio" name="attr_playaroundGroup" value="3"id="playaroundGroup_12" />
+                    <input type="radio" name="attr_playaroundGroup" value="4"id="playaroundGroup_13" />
+                    <input type="radio" name="attr_playaroundGroup" value="5"id="playaroundGroup_14" />
+                    <input type="radio" name="attr_playaroundGroup" value="6"id="playaroundGroup_15" />
+                    <input type="radio" name="attr_playaroundGroup" value="7"id="playaroundGroup_16" />
+                    <input type="radio" name="attr_playaroundGroup" value="8"id="playaroundGroup_17" />
+                    <input type="radio" name="attr_playaroundGroup" value="9"id="playaroundGroup_18" />
+                    <input type="radio" name="attr_playaroundGroup" value="10" id="playaroundGroup_19" />
+                    <span class="style2">10</span>
+					<p class="style4">&nbsp;</p>       	  </td>
+	  </tr>
+  </table>
+	</table>
+</div>
+
+    
+<div class="sheet-tab-content sheet-tab-npc">
+    <!-- Contains the Header Logo and "MONSTER SHEET" section -->
+    <table name="headerTable" width="100%" height="100%" border="3" cellpadding="15" cellspacing="15" bordercolor="#999999">
+        <tr>
+            <td width="551" height="360" rowspan="2"><p><img src="https://s3.amazonaws.com/files.d20.io/images/19769491/pJK6lyCw25jwLsAbitBhZQ/max.jpg" width="551" height="323" longdesc=	"https://s3.amazonaws.com/files.d20.io/images/19769491/pJK6lyCw25jwLsAbitBhZQ/max.jpg" /></p></td>
+            <td align="top"><h1 align="right" class="style1">MONSTER SHEET</h1>
+          <hr></td>
+      </tr>
+        <tr>
+          <td align="center"><table width="518" height="233" name="ThisIsMe">
+            <tr>
+              <td width="107" align="center" class="sludge">This</td>
+              <td width="194"><input type="text" name="attr_npc_name" id="name2" /></td>
+              <td width="27">is a </td>
+              <td width="170"><select name="npc_monsterType" id="npc_monsterType">
+                <option value="0">regular monster</option>
+                <option value="1">scary monster</option>
+                <option value="2">Big Bad Monster</option>
+                              </select>              </td>
+            </tr>
+            <tr>
+              <td align="center">It is scary when</td>
+              <td colspan="3"><textarea name="attr_scareCondition" cols="40" rows="2" id="attr_scareCondition"></textarea></td>
+            </tr>
+            <tr>
+              <td align="center">It wants</td>
+              <td colspan="3"><textarea name="dob" cols="40" rows="2" id="dob2"></textarea></td>
+            </tr>
+          </table></td>
+        </tr>
+    </table>
+
+  
+  <table name="npc" width="100%" height="100%" border="3" cellpadding="15" cellspacing="15" bordercolor="#999999">
+      <tr>
+        <td width="39%" height="-7"><table width="364" height="141">
+            <tr>
+              <th colspan="2" scope="col"><h1 class="style1">Abilities</h1></th>
+              <th width="253" align="left" class="style1" scope="col"><div align="center" class="style2">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</div></th>
+          </tr>
+            <tr>
+              <td width="32" height="28">&nbsp;</td>
+              <td align="center" width="158"><div align="center">Fight: </div></td>
+              <td><div align="center">
+                <input type="radio" name="attr_npc_fight" value="1" id="attr_npc_fight_0">
+                <input type="radio" name="attr_npc_fight" value="2" id="attr_npc_fight_1">
+                <input type="radio" name="attr_npc_fight" value="3" id="attr_npc_fight_2">
+                <input type="radio" name="attr_npc_fight" value="4" id="attr_npc_fight_3">
+                <input type="radio" name="attr_npc_fight" value="5" id="attr_npc_fight_4">
+                <input type="radio" name="attr_npc_fight" value="6" id="attr_npc_fight_5">              
+              </div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td align="center" ><div align="center">Grab:</div></td>
+              <td><div align="center">
+                <input type="radio" name="attr_npc_grab" value="1" id="attr_npc_grab_6">
+                <input type="radio" name="attr_npc_grab" value="2" id="attr_npc_grab_7">
+                <input type="radio" name="attr_npc_grab" value="3" id="attr_npc_grab_8">
+                <input type="radio" name="attr_npc_grab" value="4" id="attr_npc_grab_9">
+                <input type="radio" name="attr_npc_grab" value="5" id="attr_npc_grab_10">
+                <input type="radio" name="attr_npc_grab" value="6" id="attr_npc_grab_11">
+              </div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td align="center" ><div align="center">Chase:</div></td>
+              <td><div align="center">
+                <input type="radio" name="attr_npc_chase" value="1" id="attr_npc_chase_12">
+                <input type="radio" name="attr_npc_chase" value="2" id="attr_npc_chase_13">
+                <input type="radio" name="attr_npc_chase" value="3" id="attr_npc_chase_14">
+                <input type="radio" name="attr_npc_chase" value="4" id="attr_npc_chase_15">
+                <input type="radio" name="attr_npc_chase" value="5" id="attr_npc_chase_16">
+                <input type="radio" name="attr_npc_chase" value="6" id="attr_npc_chase_17">
+              </div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td align="center" ><div align="center">Scare:</div></td>
+              <td><div align="center">
+                <input type="radio" name="attr_npc_scare" value="1" id="attr_npc_scare_18">
+                <input type="radio" name="attr_npc_scare" value="2" id="attr_npc_scare_19">
+                <input type="radio" name="attr_npc_scare" value="3" id="attr_npc_scare_20">
+                <input type="radio" name="attr_npc_scare" value="4" id="attr_npc_scare_21">
+                <input type="radio" name="attr_npc_scare" value="5" id="attr_npc_scare_22">
+                <input type="radio" name="attr_npc_scare" value="6" id="attr_npc_scare_23">
+              </div></td>
+            </tr>
+        </table></td>
+        <td width="61%" rowspan="5">
+        <table name="attr_npc_stuff" width="474" height="121">
+          <tr>
+            <td width="74" height="37"><div align="left">Stuff 1:</div></td>
+            <td width="298"><textarea name="attr_npc_stuff" cols="35" rows="1" id="attr_npc_stuff"></textarea></td>
+            <td width="86"><p align="center">Belief:
+              <input name="attr_npc_stuff1_totalBelief" type="text" id="attr_npc_stuff1_totalBelief" size="5" maxlength="5" readonly>
+              <p align="center" class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em></p></td>
+          </tr>
+          <tr>
+            <td><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff_power1" cols="35" rows="2" id="attr_npc_stuff_power1"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="1" id="attr_npc_stuff1_power1_belief1">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="2" id="attr_npc_stuff1_power1_belief2">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="3" id="attr_npc_stuff1_power1_belief3">
+            </div></td>
+          </tr>
+          <tr>
+            <td><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff1_power2" cols="35" rows="2" id="attr_npc_stuff_power2"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="1" id="attr_npc_stuff_power2_belief_1">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="2" id="attr_npc_stuff_power2_belief_2">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="3" id="attr_npc_stuff_power2_belief_3">
+            </div></td>
+          </tr>
+          <tr>
+            <td height="24"><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff_power3" cols="35" rows="2" id="attr_npc_stuff_power3"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="1" id="attr_npc_stuff_power3_belief_1">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="2" id="attr_npc_stuff_power3_belief_2">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="3" id="attr_npc_stuff_power3_belief_3">
+            </div></td>
+          </tr>
+        </table>
+        <fieldset class="repeating_npc_stuff"> 
+        <table name="attr_npc_stuff" width="474" height="121">
+          <tr>
+            <td width="74" height="37"><div align="left">Stuff 1:</div></td>
+            <td width="298"><textarea name="attr_npc_stuff" cols="35" rows="1" id="attr_npc_stuff"></textarea></td>
+            <td width="86"><p align="center">Belief:
+              <input name="attr_npc_stuff1_totalBelief" type="text" id="attr_npc_stuff1_totalBelief" size="5" maxlength="5" readonly>
+              <p align="center" class="style2"><em>1 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp; &nbsp;&nbsp;3</em></p></td>
+          </tr>
+          <tr>
+            <td><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff_power1" cols="35" rows="2" id="attr_npc_stuff_power1"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="1" id="attr_npc_stuff1_power1_belief1">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="2" id="attr_npc_stuff1_power1_belief2">
+                <input type="radio" name="attr_npc_stuff_power1_belief" value="3" id="attr_npc_stuff1_power1_belief3">
+            </div></td>
+          </tr>
+          <tr>
+            <td><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff1_power2" cols="35" rows="2" id="attr_npc_stuff_power2"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="1" id="attr_npc_stuff_power2_belief_1">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="2" id="attr_npc_stuff_power2_belief_2">
+                <input type="radio" name="attr_npc_stuff_power2_belief" value="3" id="attr_npc_stuff_power2_belief_3">
+            </div></td>
+          </tr>
+          <tr>
+            <td height="24"><div align="right">* power:</div></td>
+            <td><textarea name="attr_npc_stuff_power3" cols="35" rows="2" id="attr_npc_stuff_power3"></textarea></td>
+            <td><div align="center">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="1" id="attr_npc_stuff_power3_belief_1">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="2" id="attr_npc_stuff_power3_belief_2">
+                <input type="radio" name="attr_npc_stuff_power3_belief" value="3" id="attr_npc_stuff_power3_belief_3">
+            </div></td>
+          </tr>
+        </table>
+        </fieldset>
+        </td>
+    </tr>
+      <tr>
+        <td height="-11"><table width="85%">
+          <tr>
+              <th colspan="2" scope="col"><h1><span class="style1">Qualities</span>
+                <input name="attr_npc_quality_value" type="hidden" id="attr_npc_quality_value" value="3">
+              </h1></th>
+            </tr>
+            <tr>
+              <td width="21%">It is</td>
+              <td width="79%"><textarea name="attr_npc_qual1" id="attr_npc_qual1" cols="45" rows="2"></textarea></td>
+            </tr>
+            <tr>
+              <td>It can</td>
+              <td><textarea name="attr_npc_qual2" id="attr_npc_qual2" cols="45" rows="2"></textarea></td>
+            </tr>
+            <tr>
+              <td>It can</td>
+              <td><textarea name="attr_npc_qual3" id="attr_npc_qual3" cols="45" rows="2"></textarea></td>
+            </tr>
+            <tr>
+              <td>It can</td>
+              <td><textarea name="attr_npc_qual4" id="attr_npc_qual4" cols="45" rows="2"></textarea></td>
+            </tr>
+            <tr>
+              <td>It cannot</td>
+              <td><textarea name="attr_npc_qual5" id="attr_npc_qual5" cols="45" rows="2"></textarea></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="225"><table width="66%" height="186">
+          <tr>
+              <th scope="col"><h1 align="center" class="style1">Health</h1></th>
+            </tr>
+            <tr>
+              <td height="24"><div align="center">
+                  <span class="style1">&nbsp;&nbsp;</span><span class="style2">&nbsp;1</span> 
+              <input name="attr_npc_hp" type="radio" id="npc_hp_Group_11" value="1" />
+                  <input type="radio" name="attr_npc_hp" value="2" id="npc_hp_Group_12" />
+                  <input type="radio" name="attr_npc_hp" value="3" id="npc_hp_Group_13" />
+                  <input type="radio" name="attr_npc_hp" value="4" id="npc_hp_Group_14" />
+                  <input type="radio" name="attr_npc_hp" value="5" id="npc_hp_Group_15" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_hp" value="6" id="npc_hp_Group_16" />
+                  <input type="radio" name="attr_npc_hp" value="7" id="npc_hp_Group_17" />
+                  <input type="radio" name="attr_npc_hp" value="8" id="npc_hp_Group_18" />
+                  <input type="radio" name="attr_npc_hp" value="9" id="npc_hp_Group_19" />
+                  <input type="radio" name="attr_npc_hp" value="10" id="npc_hp_Group_20" />&nbsp;&nbsp;
+              </div></td>
+            </tr>
+            <tr>
+              <td><div align="center">&nbsp;&nbsp;
+                <input type="radio" name="attr_npc_hp" value="1" id="npc_hp_Group_21" />
+                  <input type="radio" name="attr_npc_hp" value="2" id="npc_hp_Group_22" />
+                  <input type="radio" name="attr_npc_hp" value="3" id="npc_hp_Group_23" />
+                  <input type="radio" name="attr_npc_hp" value="4" id="npc_hp_Group_24" />
+                  <input type="radio" name="attr_npc_hp" value="5" id="npc_hp_Group_25" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_hp" value="6" id="npc_hp_Group_26" />
+                  <input type="radio" name="attr_npc_hp" value="7" id="npc_hp_Group_27" />
+                  <input type="radio" name="attr_npc_hp" value="8" id="npc_hp_Group_28" />
+                  <input type="radio" name="attr_npc_hp" value="9" id="npc_hp_Group_29" />
+                  <input type="radio" name="attr_npc_hp" value="10" id="npc_hp_Group_30" />
+              </div></td>
+            </tr>
+            <tr>
+              <td><div align="center">&nbsp;&nbsp;
+                <input type="radio" name="attr_npc_hp" value="1" id="npc_hp_Group_31" />
+                  <input type="radio" name="attr_npc_hp" value="2" id="npc_hp_Group_32" />
+                  <input type="radio" name="attr_npc_hp" value="3" id="npc_hp_Group_33" />
+                  <input type="radio" name="attr_npc_hp" value="4" id="npc_hp_Group_34" />
+                  <input type="radio" name="attr_npc_hp" value="5" id="npc_hp_Group_35" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_hp" value="6" id="npc_hp_Group_36" />
+                  <input type="radio" name="attr_npc_hp" value="7" id="npc_hp_Group_37" />
+                  <input type="radio" name="attr_npc_hp" value="8" id="npc_hp_Group_38" />
+                  <input type="radio" name="attr_npc_hp" value="9" id="npc_hp_Group_39" />
+                  <input type="radio" name="attr_npc_hp" value="10" id="npc_hp_Group_40" />
+              </div></td>
+            </tr>
+            <tr>
+              <td><div align="center">&nbsp;&nbsp;
+                <input type="radio" name="attr_npc_hp" value="1" id="npc_hp_Group_41" />
+                  <input type="radio" name="attr_npc_hp" value="2" id="npc_hp_Group_42" />
+                  <input type="radio" name="attr_npc_hp" value="3" id="npc_hp_Group_43" />
+                  <input type="radio" name="attr_npc_hp" value="4" id="npc_hp_Group_44" />
+                  <input type="radio" name="attr_npc_hp" value="5" id="npc_hp_Group_45" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_hp" value="6" id="npc_hp_Group_46" />
+                  <input type="radio" name="attr_npc_hp" value="7" id="npc_hp_Group_47" />
+                  <input type="radio" name="attr_npc_hp" value="8" id="npc_hp_Group_48" />
+                  <input type="radio" name="attr_npc_hp" value="9" id="npc_hp_Group_49" />
+                  <input type="radio" name="attr_npc_hp" value="10" id="npc_hp_Group_50" />
+              </div></td>
+            </tr>
+            <tr>
+              <td><div align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="attr_npc_hp" value="1" id="npc_hp_Group_51" />
+                  <input type="radio" name="attr_npc_hp" value="2" id="npc_hp_Group_52" />
+                  <input type="radio" name="attr_npc_hp" value="3" id="npc_hp_Group_53" />
+                  <input type="radio" name="attr_npc_hp" value="4" id="npc_hp_Group_54" />
+                  <input type="radio" name="attr_npc_hp" value="5" id="npc_hp_Group_55" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_hp" value="6" id="npc_hp_Group_56" />
+                  <input type="radio" name="attr_npc_hp" value="7" id="npc_hp_Group_57" />
+                  <input type="radio" name="attr_npc_hp" value="8" id="npc_hp_Group_58" />
+                  <input type="radio" name="attr_npc_hp" value="9" id="npc_hp_Group_59" />
+                  <input type="radio" name="attr_npc_hp" value="10" id="npc_hp_Group_60" />
+                  <span class="style2">50</span>              </div></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="-14"><table width="62%" height="71">
+            <tr>
+              <th scope="col"><h1 align="center" class="style1">Terror</h1></th>
+            </tr>
+            <tr>
+              <td height="24"><div align="center">
+                  <span class="style2">1                  </span>
+            <input type="radio" name="attr_npc_terror" value="1" id="npc_terror_Group_1" />
+                  <input type="radio" name="attr_npc_terror" value="2" id="npc_terror_Group_2" />
+                  <input type="radio" name="attr_npc_terror" value="3" id="npc_terror_Group_3" />
+                  <input type="radio" name="attr_npc_terror" value="4" id="npc_terror_Group_4" />
+                  <input type="radio" name="attr_npc_terror" value="5" id="npc_terror_Group_5" />
+                  <strong>|</strong>
+                  <!-- half way point -->
+                  <input type="radio" name="attr_npc_terror" value="6" id="npc_terror_Group_6" />
+                  <input type="radio" name="attr_npc_terror" value="7" id="npc_terror_Group_7" />
+                  <input type="radio" name="attr_npc_terror" value="8" id="npc_terror_Group_8" />
+                  <input type="radio" name="attr_npc_terror" value="9" id="npc_terror_Group_9" />
+                  <input type="radio" name="attr_npc_terror" value="10" id="npc_terror_Group_10" />
+                  <span class="style2">10</span>              </div></td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="-15"><h1 class="style1">Weaknesses</h1>
+        <p>
+          <textarea name="attr_npc_weakness" id="attr_npc_weakness" cols="45" rows="5"></textarea>
+        </p></td>
+      </tr>
+  </table>
+</div>
+
+<div class="sheet-tab-content sheet-tab-question">  
+		<table name="quest" width="100%" height="100%" border="3" cellpadding="15" cellspacing="15" bordercolor="#999999">
+			<tr>
+              <td width="auto" height="auto"><h1 align="center" class="style3">Questionnaire</h1></td>
+            </tr>
+            <tr>
+           	  <td><p>
+           	    <textarea name="question" cols="50" rows="1" title="question" label="question">My best friend is </textarea>
+           	  </p>
+       	      <p>
+       	        <textarea name="question2" cols="50" rows="1" title="question" label="question">The one grown-up I can trust is</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question3" cols="50" rows="1" title="question" label="question">Once I lost</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question4" cols="50" rows="4" title="question" label="question">It was special because</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question5" cols="50" rows="1" title="question" label="question">The one place mosters can't get me is</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question6" cols="50" rows="1" title="question" label="question">I don't go near</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question7" cols="50" rows="3" title="question" label="question">I dont go there because</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question8" cols="50" rows="4" title="question" label="question">My biggest fear is</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question9" cols="50" rows="2" title="question" label="question">The thing I like least about my self is</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question10" cols="50" rows="3" title="question" label="question">The thinkg that always get me in trouble is</textarea>
+       	      </p>
+       	      <p>
+       	        <textarea name="question11" cols="50" rows="2" title="question" label="question">When monsters are around </textarea>
+</p>
+       	      <p>
+       	        <textarea name="question12" cols="50" rows="5" title="question" label="question">My Family is</textarea>
+       	      </p></td>
+            </tr>           
+        </table>
+</div>
+
+
+<!-- End of Roll20 Chat Template--
+
+<rolltemplate class="sheet-rolltemplate-LittleFears">
+ <table>
+ 	<tr><th>{{rollname}}</th></tr>
+    
+		<tr>
+        	<td><span class="tcat">Name: </span>{{name}} </td>
+        </tr>
+		
+        {{#ability}}
+			<tr>
+				<td><span class="tcat">Ability: </span>{{ability}} </td>
+			</tr>
+		{{/ability}}
+
+		<tr>
+			<td><span class="tcat">Result: </span>{{result}}</td>
+		</tr>
+ </table>
+</rolltemplate> -->
